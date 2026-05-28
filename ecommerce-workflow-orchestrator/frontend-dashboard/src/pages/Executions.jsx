@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const executions = [
   {
     workflowId: "WF-1001",
@@ -68,9 +70,9 @@ const Executions = () => {
                 </p>
               </div>
 
-              <button className="bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 transition-all">
-                View Logs
-              </button>
+              <Link to={`/executions/${execution.workflowId}`} className="bg-blue-600 text-white px-5 py-3 rounded-xl hover:bg-blue-700 transition-all font-semibold">
+                View Details
+              </Link>
 
             </div>
 

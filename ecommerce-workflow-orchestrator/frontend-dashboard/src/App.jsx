@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Workflows from "./pages/Workflows";
 import Executions from "./pages/Executions";
+import WorkflowDetails from "./pages/WorkflowDetails";
 import Tasks from "./pages/Tasks";
 import Logs from "./pages/Logs";
 import Alerts from "./pages/Alerts";
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/workflows" element={<Workflows />} />
             <Route path="/executions" element={<Executions />} />
+            <Route path="/executions/:id" element={<WorkflowDetails />} />
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/logs" element={<Logs />} />
             <Route path="/alerts" element={<Alerts />} />
