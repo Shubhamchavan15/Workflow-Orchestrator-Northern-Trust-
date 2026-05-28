@@ -1,0 +1,39 @@
+{
+    "workflow_name": "Ecommerce Order Workflow",
+    "tasks": [
+      {
+        "id": "order_received",
+        "type": "start",
+        "next": ["payment"]
+      },
+      {
+        "id": "payment",
+        "type": "http",
+        "service": "payment-service",
+        "next": ["inventory"]
+      },
+      {
+        "id": "inventory",
+        "type": "http",
+        "service": "inventory-service",
+        "next": ["shipping", "notification"]
+      },
+      {
+        "id": "shipping",
+        "type": "http",
+        "service": "shipping-service",
+        "next": ["completed"]
+      },
+      {
+        "id": "notification",
+        "type": "http",
+        "service": "notification-service",
+        "next": ["completed"]
+      },
+      {
+        "id": "completed",
+        "type": "end",
+        "next": []
+      }
+    ]
+  }
