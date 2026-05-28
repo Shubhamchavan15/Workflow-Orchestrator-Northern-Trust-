@@ -10,7 +10,7 @@ from app.orchestrator.parser       import WorkflowParser
 from app.orchestrator.executor     import TaskExecutor
 from app.orchestrator.retry_manager import RetryManager
 from app.orchestrator.state_manager import StateManager
-from app.database.postgres          import get_executions_collection, get_alerts_collection
+from app.database.postgres          import get_executions_collection, get_alerts_collection, get_admin_notification_email
 
 
 class WorkflowEngine:
@@ -177,37 +177,81 @@ class WorkflowEngine:
             print(f"[Engine] Failed to finalize execution record: {e}")
 
     def _send_failure_notification(self, error_msg: str, order_data: dict, state_manager: StateManager):
-        """Call the notification service to inform the customer about the failure."""
+        """Call the notification service to inform the customer AND admin about the failure."""
         import os, requests as req
         url = os.getenv("NOTIFICATION_SERVICE_URL", "http://localhost:8004/send")
         error_lower = error_msg.lower()
 
         if "payment" in error_lower or "declined" in error_lower or "card" in error_lower:
             notification_type = "payment_failed"
-            message = f"Your payment for order {order_data.get('order_id')} could not be processed. Reason: {error_msg}"
+            customer_message  = (
+                f"Your payment for order {order_data.get('order_id')} could not be processed. "
+                f"Reason: {error_msg}. Please check your payment details and try again."
+            )
+            admin_message = (
+                f"ALERT: Payment failed for order {order_data.get('order_id')}. "
+                f"Customer: {order_data.get('customer_name')} ({order_data.get('customer_email')}). "
+                f"Amount: {order_data.get('currency', 'INR')} {order_data.get('amount', 0)}. "
+                f"Reason: {error_msg}"
+            )
         elif "inventory" in error_lower or "stock" in error_lower:
-            notification_type = "payment_failed"   # reuse channel, different message
-            message = f"Sorry, one or more items in order {order_data.get('order_id')} are out of stock."
+            notification_type = "payment_failed"
+            customer_message  = (
+                f"Sorry, one or more items in order {order_data.get('order_id')} are out of stock. "
+                f"Your payment has not been charged."
+            )
+            admin_message = (
+                f"ALERT: Inventory check failed for order {order_data.get('order_id')}. "
+                f"Customer: {order_data.get('customer_name')}. Reason: {error_msg}"
+            )
         else:
             notification_type = "payment_failed"
-            message = f"Your order {order_data.get('order_id')} could not be completed. Please try again."
-
-        payload = {
-            "order_id":          order_data.get("order_id", "UNKNOWN"),
-            "customer_email":    order_data.get("customer_email", ""),
-            "customer_name":     order_data.get("customer_name", "Customer"),
-            "notification_type": notification_type,
-            "message":           message,
-        }
-        try:
-            resp = req.post(url, json=payload, timeout=5)
-            state_manager.append_log(
-                f"Failure notification sent to {order_data.get('customer_email')} — {resp.json().get('message', '')}"
+            customer_message  = (
+                f"Your order {order_data.get('order_id')} could not be completed. "
+                f"Please try again or contact support."
             )
-            print(f"[Engine] Failure notification sent to {order_data.get('customer_email')}")
-        except Exception as e:
-            state_manager.append_log(f"Failure notification could not be sent: {e}")
-            print(f"[Engine] Failure notification failed (non-fatal): {e}")
+            admin_message = (
+                f"ALERT: Workflow failed for order {order_data.get('order_id')}. "
+                f"Customer: {order_data.get('customer_name')}. Reason: {error_msg}"
+            )
+
+        # 1. Notify the customer
+        customer_email = order_data.get("customer_email", "")
+        if customer_email:
+            try:
+                resp = req.post(url, json={
+                    "order_id":          order_data.get("order_id", "UNKNOWN"),
+                    "customer_email":    customer_email,
+                    "customer_name":     order_data.get("customer_name", "Customer"),
+                    "notification_type": notification_type,
+                    "message":           customer_message,
+                }, timeout=30)
+                state_manager.append_log(
+                    f"Failure notification sent to customer: {customer_email}"
+                )
+                print(f"[Engine] Failure notification sent to customer: {customer_email}")
+            except Exception as e:
+                state_manager.append_log(f"Customer notification failed: {e}")
+                print(f"[Engine] Customer notification failed (non-fatal): {e}")
+
+        # 2. Notify the admin (if email is configured in Settings)
+        admin_email = get_admin_notification_email()
+        if admin_email and admin_email != customer_email:
+            try:
+                req.post(url, json={
+                    "order_id":          order_data.get("order_id", "UNKNOWN"),
+                    "customer_email":    admin_email,
+                    "customer_name":     "Admin",
+                    "notification_type": notification_type,
+                    "message":           admin_message,
+                }, timeout=30)
+                state_manager.append_log(
+                    f"Alert notification sent to admin: {admin_email}"
+                )
+                print(f"[Engine] Alert notification sent to admin: {admin_email}")
+            except Exception as e:
+                state_manager.append_log(f"Admin notification failed: {e}")
+                print(f"[Engine] Admin notification failed (non-fatal): {e}")
 
     def _raise_alert(self, execution_id: str, error_msg: str, order_data: dict):
         try:

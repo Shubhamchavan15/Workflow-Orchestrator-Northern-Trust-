@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes.workflow_routes  import router as workflow_router
 from app.routes.dashboard_routes import router as dashboard_router
+from app.routes.settings_routes  import router as settings_router
 
 app = FastAPI(
     title="Ecommerce Workflow Orchestrator",
@@ -26,6 +27,7 @@ app.add_middleware(
 
 app.include_router(workflow_router)
 app.include_router(dashboard_router)
+app.include_router(settings_router)
 
 
 @app.get("/health")

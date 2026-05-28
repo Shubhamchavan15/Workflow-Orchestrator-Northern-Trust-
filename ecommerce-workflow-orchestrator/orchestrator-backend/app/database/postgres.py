@@ -12,9 +12,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent / "data"
 BASE_DIR.mkdir(exist_ok=True)
 
-EXEC_FILE   = BASE_DIR / "executions.json"
-LOGS_FILE   = BASE_DIR / "logs.json"
-ALERTS_FILE = BASE_DIR / "alerts.json"
+EXEC_FILE     = BASE_DIR / "executions.json"
+LOGS_FILE     = BASE_DIR / "logs.json"
+ALERTS_FILE   = BASE_DIR / "alerts.json"
+SETTINGS_FILE = BASE_DIR / "settings.json"
 
 _lock = threading.Lock()
 
@@ -160,6 +161,7 @@ class _Cursor:
 _executions = _Collection(EXEC_FILE)
 _logs        = _Collection(LOGS_FILE)
 _alerts      = _Collection(ALERTS_FILE)
+_settings    = _Collection(SETTINGS_FILE)
 
 
 def get_executions_collection() -> _Collection:
@@ -172,3 +174,13 @@ def get_logs_collection() -> _Collection:
 
 def get_alerts_collection() -> _Collection:
     return _alerts
+
+
+def get_settings_collection() -> _Collection:
+    return _settings
+
+
+def get_admin_notification_email() -> str:
+    """Return the saved admin notification email, or empty string if not set."""
+    doc = _settings.find_one({"settings_key": "admin_settings"}) or {}
+    return doc.get("notification_email", "")
