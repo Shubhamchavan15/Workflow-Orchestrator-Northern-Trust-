@@ -208,5 +208,275 @@
     "execution_id": "EX-E1153584",
     "timestamp": "2026-05-28T22:29:51.542962",
     "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-26712D36",
+    "timestamp": "2026-05-28T22:35:36.852265",
+    "message": "Workflow execution started. execution_id=EX-26712D36"
+  },
+  {
+    "execution_id": "EX-26712D36",
+    "timestamp": "2026-05-28T22:35:36.891451",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-26712D36",
+    "timestamp": "2026-05-28T22:35:36.926370",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-26712D36",
+    "timestamp": "2026-05-28T22:35:36.976822",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-6F1F5672",
+    "timestamp": "2026-05-28T22:35:37.271938",
+    "message": "Workflow execution started. execution_id=EX-6F1F5672"
+  },
+  {
+    "execution_id": "EX-6F1F5672",
+    "timestamp": "2026-05-28T22:35:37.321112",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-6F1F5672",
+    "timestamp": "2026-05-28T22:35:37.367637",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-6F1F5672",
+    "timestamp": "2026-05-28T22:35:37.420902",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:37.691723",
+    "message": "Workflow execution started. execution_id=EX-0C7DB539"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:37.731854",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:37.780908",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:37.831233",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:44.236378",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:44.280205",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:46.350119",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:46.402510",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:46.422336",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:48.551749",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:48.595969",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:48.643786",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-26712D36",
+    "timestamp": "2026-05-28T22:35:49.268380",
+    "message": "Task 'payment' FAILED after retries: payment failed: Invalid card number"
+  },
+  {
+    "execution_id": "EX-26712D36",
+    "timestamp": "2026-05-28T22:35:49.300376",
+    "message": "Workflow FAILED: payment failed: Invalid card number"
+  },
+  {
+    "execution_id": "EX-26712D36",
+    "timestamp": "2026-05-28T22:35:49.347754",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-6F1F5672",
+    "timestamp": "2026-05-28T22:35:50.315457",
+    "message": "Task 'payment' FAILED after retries: payment failed: Transaction limit exceeded"
+  },
+  {
+    "execution_id": "EX-6F1F5672",
+    "timestamp": "2026-05-28T22:35:50.341210",
+    "message": "Workflow FAILED: payment failed: Transaction limit exceeded"
+  },
+  {
+    "execution_id": "EX-6F1F5672",
+    "timestamp": "2026-05-28T22:35:50.413863",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:52.666369",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "timestamp": "2026-05-28T22:35:52.722751",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-539169B9",
+    "timestamp": "2026-05-28T22:41:57.410114",
+    "message": "Workflow execution started. execution_id=EX-539169B9"
+  },
+  {
+    "execution_id": "EX-539169B9",
+    "timestamp": "2026-05-28T22:41:57.440838",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-539169B9",
+    "timestamp": "2026-05-28T22:41:57.485698",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-539169B9",
+    "timestamp": "2026-05-28T22:41:57.535002",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-539169B9",
+    "timestamp": "2026-05-28T22:42:09.734079",
+    "message": "Task 'payment' FAILED after retries: payment failed: Payment gateway timeout"
+  },
+  {
+    "execution_id": "EX-539169B9",
+    "timestamp": "2026-05-28T22:42:09.776052",
+    "message": "Workflow FAILED: payment failed: Payment gateway timeout"
+  },
+  {
+    "execution_id": "EX-539169B9",
+    "timestamp": "2026-05-28T22:42:11.855610",
+    "message": "Failure notification sent to zyc@gmail.com \u2014 Notification sent to zyc@gmail.com"
+  },
+  {
+    "execution_id": "EX-539169B9",
+    "timestamp": "2026-05-28T22:42:11.898986",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:42:47.448659",
+    "message": "Workflow execution started. execution_id=EX-C6F50FEC"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:42:47.484586",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:42:47.534521",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:42:47.571482",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:42:49.704996",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:42:49.754863",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:43:01.973260",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: Item out of stock \u2014 back-order triggered"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:43:02.008090",
+    "message": "Workflow FAILED: inventory failed: Item out of stock \u2014 back-order triggered"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:43:04.090513",
+    "message": "Failure notification sent to zyc@gmail.com \u2014 Notification (payment_failed) sent to zyc@gmail.com"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "timestamp": "2026-05-28T22:43:04.115532",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-5DB89C9E",
+    "timestamp": "2026-05-28T22:46:37.315982",
+    "message": "Workflow execution started. execution_id=EX-5DB89C9E"
+  },
+  {
+    "execution_id": "EX-5DB89C9E",
+    "timestamp": "2026-05-28T22:46:37.345933",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-5DB89C9E",
+    "timestamp": "2026-05-28T22:46:37.396564",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-5DB89C9E",
+    "timestamp": "2026-05-28T22:46:37.443115",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-5DB89C9E",
+    "timestamp": "2026-05-28T22:46:49.662300",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: Item out of stock \u2014 back-order triggered"
+  },
+  {
+    "execution_id": "EX-5DB89C9E",
+    "timestamp": "2026-05-28T22:46:49.686074",
+    "message": "Workflow FAILED: inventory failed: Item out of stock \u2014 back-order triggered"
+  },
+  {
+    "execution_id": "EX-5DB89C9E",
+    "timestamp": "2026-05-28T22:46:51.807427",
+    "message": "Failure notification sent to john@gmail.com \u2014 Notification (payment_failed) sent to john@gmail.com"
+  },
+  {
+    "execution_id": "EX-5DB89C9E",
+    "timestamp": "2026-05-28T22:46:51.855767",
+    "message": "Workflow execution finished with status: FAILED"
   }
 ]

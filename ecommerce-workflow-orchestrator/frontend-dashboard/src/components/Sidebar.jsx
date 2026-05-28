@@ -1,81 +1,72 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
-  FaHome,
-  FaProjectDiagram,
-  FaTasks,
-  FaFileAlt,
-  FaBell,
-  FaCog,
+  FaHome, FaProjectDiagram, FaTasks,
+  FaFileAlt, FaBell, FaCog, FaListAlt,
 } from "react-icons/fa";
+import API from "../services/api";
 
-
+const NAV = [
+  { to: "/",           label: "Overview",   icon: FaHome },
+  { to: "/workflows",  label: "Workflows",  icon: FaProjectDiagram },
+  { to: "/executions", label: "Executions", icon: FaListAlt },
+  { to: "/tasks",      label: "Tasks",      icon: FaTasks },
+  { to: "/logs",       label: "Logs",       icon: FaFileAlt },
+  { to: "/alerts",     label: "Alerts",     icon: FaBell },
+  { to: "/settings",   label: "Settings",   icon: FaCog },
+];
 
 const Sidebar = () => {
+  const location                    = useLocation();
+  const [alertCount, setAlertCount] = useState(0);
+
+  useEffect(() => {
+    const fetch = () => {
+      API.get("/workflows/alerts?limit=100")
+        .then((r) => {
+          const unresolved = (r.data.alerts || []).filter((a) => !a.resolved).length;
+          setAlertCount(unresolved);
+        })
+        .catch(() => {});
+    };
+    fetch();
+    const id = setInterval(fetch, 10000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
-    <div className="w-56 min-h-screen bg-blue-700 text-white p-6">
-      <h1 className="text-3xl font-bold mb-12">
-        Orchestrator
-      </h1>
+    <div className="w-56 min-h-screen bg-blue-700 text-white p-6 flex flex-col">
+      <h1 className="text-2xl font-bold mb-10 tracking-tight">Orchestrator</h1>
 
-      <ul className="space-y-5 text-lg">
-
-        <Link
-          to="/"
-          className="flex items-center gap-4 bg-blue-500 p-3 rounded-xl cursor-pointer"
-        >
-          <FaHome />
-          Overview
-        </Link>
-
-        <Link
-          to="/workflows"
-          className="flex items-center gap-4 p-3 rounded-xl cursor-pointer hover:bg-blue-500 transition-all"
-        >
-          <FaProjectDiagram />
-          Workflows
-        </Link>
-
-        <Link
-          to="/executions"
-          className="flex items-center gap-4 p-3 rounded-xl cursor-pointer hover:bg-blue-500 transition-all"
-        >
-          <FaTasks />
-          Executions
-        </Link>
-
-        <Link
-          to="/tasks"
-          className="flex items-center gap-4 p-3 rounded-xl cursor-pointer hover:bg-blue-500 transition-all"
-        >
-          <FaTasks />
-          Tasks
-        </Link>
-
-        <Link
-          to="/logs"
-          className="flex items-center gap-4 p-3 rounded-xl cursor-pointer hover:bg-blue-500 transition-all"
-        >
-          <FaFileAlt />
-          Logs
-        </Link>
-
-        <Link
-          to="/alerts"
-          className="flex items-center gap-4 p-3 rounded-xl cursor-pointer hover:bg-blue-500 transition-all"
-        >
-          <FaBell />
-          Alerts
-        </Link>
-
-        <Link
-          to="/settings"
-          className="flex items-center gap-4 p-3 rounded-xl cursor-pointer hover:bg-blue-500 transition-all"
-        >
-          <FaCog />
-          Settings
-        </Link>
-
+      <ul className="space-y-2 text-base flex-1">
+        {NAV.map(({ to, label, icon: Icon }) => {
+          const active = location.pathname === to;
+          return (
+            <li key={to}>
+              <Link
+                to={to}
+                className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-all font-medium ${
+                  active
+                    ? "bg-white text-blue-700 shadow-md"
+                    : "hover:bg-blue-600 text-white"
+                }`}
+              >
+                <Icon className="text-lg shrink-0" />
+                <span className="flex-1">{label}</span>
+                {label === "Alerts" && alertCount > 0 && (
+                  <span className="bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow">
+                    {alertCount > 9 ? "9+" : alertCount}
+                  </span>
+                )}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
+
+      <div className="mt-6 pt-4 border-t border-blue-600 text-xs text-blue-300 text-center">
+        v1.0.0 · NT Orchestrator
+      </div>
     </div>
   );
 };

@@ -34,8 +34,8 @@ def process_payment(req: PaymentRequest) -> PaymentResponse:
             status="pending_approval"
         )
 
-    # Random 30% failure rate to simulate real-world payment failures
-    if random.random() < 0.30:
+    # Random 40% failure rate to simulate real-world payment failures
+    if random.random() < 0.40:
         message, status = random.choice(FAILURE_SCENARIOS)
         return PaymentResponse(
             success=False,

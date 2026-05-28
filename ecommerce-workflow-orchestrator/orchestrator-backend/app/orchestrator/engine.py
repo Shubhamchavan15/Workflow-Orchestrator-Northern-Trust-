@@ -65,6 +65,8 @@ class WorkflowEngine:
             final_status = "FAILED"
             state_manager.append_log(f"Workflow FAILED: {exc}")
             self._raise_alert(execution_id, str(exc), order_data)
+            # Send failure notification to customer
+            self._send_failure_notification(str(exc), order_data, state_manager)
 
         # Persist final status
         self._finalize_execution(execution_id, final_status, state_manager.get_all_states())
@@ -173,6 +175,39 @@ class WorkflowEngine:
             )
         except Exception as e:
             print(f"[Engine] Failed to finalize execution record: {e}")
+
+    def _send_failure_notification(self, error_msg: str, order_data: dict, state_manager: StateManager):
+        """Call the notification service to inform the customer about the failure."""
+        import os, requests as req
+        url = os.getenv("NOTIFICATION_SERVICE_URL", "http://localhost:8004/send")
+        error_lower = error_msg.lower()
+
+        if "payment" in error_lower or "declined" in error_lower or "card" in error_lower:
+            notification_type = "payment_failed"
+            message = f"Your payment for order {order_data.get('order_id')} could not be processed. Reason: {error_msg}"
+        elif "inventory" in error_lower or "stock" in error_lower:
+            notification_type = "payment_failed"   # reuse channel, different message
+            message = f"Sorry, one or more items in order {order_data.get('order_id')} are out of stock."
+        else:
+            notification_type = "payment_failed"
+            message = f"Your order {order_data.get('order_id')} could not be completed. Please try again."
+
+        payload = {
+            "order_id":          order_data.get("order_id", "UNKNOWN"),
+            "customer_email":    order_data.get("customer_email", ""),
+            "customer_name":     order_data.get("customer_name", "Customer"),
+            "notification_type": notification_type,
+            "message":           message,
+        }
+        try:
+            resp = req.post(url, json=payload, timeout=5)
+            state_manager.append_log(
+                f"Failure notification sent to {order_data.get('customer_email')} — {resp.json().get('message', '')}"
+            )
+            print(f"[Engine] Failure notification sent to {order_data.get('customer_email')}")
+        except Exception as e:
+            state_manager.append_log(f"Failure notification could not be sent: {e}")
+            print(f"[Engine] Failure notification failed (non-fatal): {e}")
 
     def _raise_alert(self, execution_id: str, error_msg: str, order_data: dict):
         try:

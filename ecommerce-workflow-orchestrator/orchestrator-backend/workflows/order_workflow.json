@@ -4,18 +4,18 @@
       {
         "id": "order_received",
         "type": "start",
-        "next": ["payment"]
-      },
-      {
-        "id": "payment",
-        "type": "http",
-        "service": "payment-service",
         "next": ["inventory"]
       },
       {
         "id": "inventory",
         "type": "http",
         "service": "inventory-service",
+        "next": ["payment"]
+      },
+      {
+        "id": "payment",
+        "type": "http",
+        "service": "payment-service",
         "next": ["shipping", "notification"]
       },
       {

@@ -55,5 +55,100 @@
     "created_at": "2026-05-28T22:29:40.813375",
     "updated_at": "2026-05-28T22:29:51.525549",
     "completed_at": "2026-05-28T22:29:51.525549"
+  },
+  {
+    "execution_id": "EX-26712D36",
+    "order_id": "ORD-DEMO-86469",
+    "customer_name": "Alice Demo",
+    "customer_email": "alice@demo.com",
+    "amount": 2499.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "payment": "FAILED"
+    },
+    "created_at": "2026-05-28T22:35:36.848542",
+    "updated_at": "2026-05-28T22:35:49.319174",
+    "completed_at": "2026-05-28T22:35:49.319174"
+  },
+  {
+    "execution_id": "EX-6F1F5672",
+    "order_id": "ORD-DEMO-14040",
+    "customer_name": "Bob Demo",
+    "customer_email": "bob@demo.com",
+    "amount": 3999.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "payment": "FAILED"
+    },
+    "created_at": "2026-05-28T22:35:37.258229",
+    "updated_at": "2026-05-28T22:35:50.385213",
+    "completed_at": "2026-05-28T22:35:50.385213"
+  },
+  {
+    "execution_id": "EX-0C7DB539",
+    "order_id": "ORD-DEMO-13417",
+    "customer_name": "Carol Demo",
+    "customer_email": "carol@demo.com",
+    "amount": 1299.0,
+    "status": "COMPLETED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "payment": "COMPLETED",
+      "inventory": "COMPLETED",
+      "shipping": "COMPLETED",
+      "notification": "COMPLETED",
+      "completed": "COMPLETED"
+    },
+    "created_at": "2026-05-28T22:35:37.673646",
+    "updated_at": "2026-05-28T22:35:52.698269",
+    "completed_at": "2026-05-28T22:35:52.698269"
+  },
+  {
+    "execution_id": "EX-539169B9",
+    "order_id": "ORD-67772",
+    "customer_name": "Shubham C ",
+    "customer_email": "zyc@gmail.com",
+    "amount": 5298.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "payment": "FAILED"
+    },
+    "created_at": "2026-05-28T22:41:57.401755",
+    "updated_at": "2026-05-28T22:42:11.872181",
+    "completed_at": "2026-05-28T22:42:11.872181"
+  },
+  {
+    "execution_id": "EX-C6F50FEC",
+    "order_id": "ORD-39704",
+    "customer_name": "Shubham C ",
+    "customer_email": "zyc@gmail.com",
+    "amount": 1299.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "payment": "COMPLETED",
+      "inventory": "FAILED"
+    },
+    "created_at": "2026-05-28T22:42:47.442443",
+    "updated_at": "2026-05-28T22:43:04.115532",
+    "completed_at": "2026-05-28T22:43:04.115532"
+  },
+  {
+    "execution_id": "EX-5DB89C9E",
+    "order_id": "ORD-45888",
+    "customer_name": "John",
+    "customer_email": "john@gmail.com",
+    "amount": 2499.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "FAILED"
+    },
+    "created_at": "2026-05-28T22:46:37.313822",
+    "updated_at": "2026-05-28T22:46:51.836536",
+    "completed_at": "2026-05-28T22:46:51.836536"
   }
 ]
