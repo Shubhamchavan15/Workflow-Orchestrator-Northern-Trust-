@@ -56,6 +56,11 @@ class TaskExecutor:
             result = resp.json()
             print(f"[Executor] {task_id} → {result}")
 
+            # If the service returned success=False, treat it as a task failure
+            if isinstance(result, dict) and result.get("success") is False:
+                reason = result.get("message", "Service returned failure")
+                raise RuntimeError(f"{task_id} failed: {reason}")
+
             # Trigger n8n webhook after notification step
             if task_id == "notification":
                 self._trigger_n8n(order_data or {}, result)

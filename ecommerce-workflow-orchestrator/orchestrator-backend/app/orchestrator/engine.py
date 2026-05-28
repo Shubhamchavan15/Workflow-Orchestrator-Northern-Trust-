@@ -177,15 +177,34 @@ class WorkflowEngine:
     def _raise_alert(self, execution_id: str, error_msg: str, order_data: dict):
         try:
             col = get_alerts_collection()
+
+            # Determine severity and title based on error content
+            error_lower = error_msg.lower()
+            if "payment" in error_lower or "declined" in error_lower or "card" in error_lower or "transaction" in error_lower:
+                severity = "Critical"
+                title    = f"Payment Failed — Order {order_data.get('order_id', 'UNKNOWN')}"
+            elif "inventory" in error_lower or "stock" in error_lower:
+                severity = "Warning"
+                title    = f"Inventory Issue — Order {order_data.get('order_id', 'UNKNOWN')}"
+            elif "shipping" in error_lower:
+                severity = "Warning"
+                title    = f"Shipping Failed — Order {order_data.get('order_id', 'UNKNOWN')}"
+            else:
+                severity = "Critical"
+                title    = f"Workflow {execution_id} failed"
+
             col.insert_one(
                 {
-                    "execution_id": execution_id,
-                    "order_id":     order_data.get("order_id", "UNKNOWN"),
-                    "severity":     "Critical",
-                    "title":        f"Workflow {execution_id} failed",
-                    "message":      error_msg,
-                    "created_at":   datetime.datetime.utcnow().isoformat(),
-                    "resolved":     False,
+                    "execution_id":   execution_id,
+                    "order_id":       order_data.get("order_id", "UNKNOWN"),
+                    "customer_name":  order_data.get("customer_name", ""),
+                    "amount":         order_data.get("amount", 0),
+                    "currency":       order_data.get("currency", "INR"),
+                    "severity":       severity,
+                    "title":          title,
+                    "message":        error_msg,
+                    "created_at":     datetime.datetime.utcnow().isoformat(),
+                    "resolved":       False,
                 }
             )
         except Exception as e:
