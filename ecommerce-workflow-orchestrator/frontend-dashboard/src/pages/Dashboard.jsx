@@ -8,10 +8,10 @@ import WorkflowChart from "../components/WorkflowChart";
 import API from "../services/api";
 
 const StatCard = ({ label, value, color, icon: Icon }) => (
-  <div className="bg-white p-6 rounded-3xl shadow-lg shadow-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+  <div className="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-lg shadow-gray-200 dark:shadow-none hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
     <div className="flex items-center justify-between">
       <div>
-        <p className="text-gray-500">{label}</p>
+        <p className="text-gray-500 dark:text-gray-400">{label}</p>
         <h2 className={`text-4xl font-bold mt-3 ${color}`}>{value}</h2>
       </div>
       <Icon className={`text-4xl ${color}`} />
@@ -29,7 +29,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="p-8">
+    <div className="p-8 dark:bg-gray-950 min-h-full transition-colors duration-300">
       <div className="grid grid-cols-4 gap-6 mb-10">
         <StatCard label="Total Workflows" value={stats.total_workflows} color="text-purple-500" icon={FaProjectDiagram} />
         <StatCard label="Running"          value={stats.running}         color="text-blue-500"   icon={FaPlayCircle} />

@@ -133,51 +133,75 @@ const PlaceOrder = () => {
     const isPaymentFail = failedTask === "payment";
 
     return (
-      <div className="max-w-lg mx-auto mt-12 p-8 bg-white rounded-3xl shadow-xl text-center">
+      <div className="max-w-lg mx-auto mt-12 p-8 bg-white dark:bg-gray-800 rounded-3xl shadow-xl text-center transition-colors duration-300">
         {isRunning   && <FaSpinner     className="text-blue-500 text-6xl mx-auto mb-4 animate-spin" />}
         {isCompleted && <FaCheckCircle className="text-green-500 text-6xl mx-auto mb-4" />}
         {isFailed    && <FaTimesCircle className="text-red-500 text-6xl mx-auto mb-4" />}
-        {isRunning   && <h2 className="text-2xl font-bold text-gray-800 mb-1">Processing your order…</h2>}
-        {isCompleted && <h2 className="text-2xl font-bold text-gray-800 mb-1">Order Confirmed! 🎉</h2>}
-        {isFailed    && <h2 className="text-2xl font-bold text-red-700 mb-1">{isPaymentFail ? "Payment Failed" : "Order Failed"}</h2>}
-        {isRunning && <p className="text-gray-500 text-sm mb-6">Checking inventory, processing payment…</p>}
-        {isCompleted && <p className="text-green-600 text-sm mb-4">Payment successful. Your order is confirmed and will be shipped soon.</p>}
+
+        {isRunning   && <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-1">Processing your order…</h2>}
+        {isCompleted && <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-1">Order Confirmed! 🎉</h2>}
+        {isFailed    && <h2 className="text-2xl font-bold text-red-700 dark:text-red-400 mb-1">{isPaymentFail ? "Payment Failed" : "Order Failed"}</h2>}
+
+        {isRunning   && <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">Checking inventory, processing payment…</p>}
+        {isCompleted && <p className="text-green-600 dark:text-green-400 text-sm mb-4">Payment successful. Your order is confirmed and will be shipped soon.</p>}
+
         {isFailed && isPaymentFail && (
-          <div className="bg-red-50 border border-red-200 rounded-2xl px-5 py-4 mb-5 text-left">
-            <p className="text-red-700 font-semibold text-sm flex items-center gap-2 mb-1"><FaTimesCircle /> Payment could not be processed</p>
-            <p className="text-red-600 text-xs">Please check your payment details and try again.</p>
-            <p className="text-gray-500 text-xs mt-2 flex items-center gap-1"><FaBell className="text-orange-400" /> A notification has been sent to <strong>{form.customer_email}</strong></p>
+          <div className="bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded-2xl px-5 py-4 mb-5 text-left">
+            <p className="text-red-700 dark:text-red-300 font-semibold text-sm flex items-center gap-2 mb-1"><FaTimesCircle /> Payment could not be processed</p>
+            <p className="text-red-600 dark:text-red-400 text-xs">Please check your payment details and try again.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-xs mt-2 flex items-center gap-1">
+              <FaBell className="text-orange-400" /> A notification has been sent to <strong>{form.customer_email}</strong>
+            </p>
           </div>
         )}
         {isFailed && !isPaymentFail && (
-          <div className="bg-orange-50 border border-orange-200 rounded-2xl px-5 py-4 mb-5 text-left">
-            <p className="text-orange-700 font-semibold text-sm mb-1">Order could not be completed</p>
-            <p className="text-orange-600 text-xs">Failed at: <strong>{failedTask || "unknown"}</strong> step.</p>
-            <p className="text-gray-500 text-xs mt-2 flex items-center gap-1"><FaBell className="text-orange-400" /> A notification has been sent to <strong>{form.customer_email}</strong></p>
+          <div className="bg-orange-50 dark:bg-orange-950 border border-orange-200 dark:border-orange-800 rounded-2xl px-5 py-4 mb-5 text-left">
+            <p className="text-orange-700 dark:text-orange-300 font-semibold text-sm mb-1">Order could not be completed</p>
+            <p className="text-orange-600 dark:text-orange-400 text-xs">Failed at: <strong>{failedTask || "unknown"}</strong> step.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-xs mt-2 flex items-center gap-1">
+              <FaBell className="text-orange-400" /> A notification has been sent to <strong>{form.customer_email}</strong>
+            </p>
           </div>
         )}
-        <div className="bg-gray-50 rounded-2xl p-4 text-left space-y-2 mb-6 text-sm">
-          <p><span className="font-semibold text-gray-700">Order ID:</span> {submitted.order_id}</p>
-          <p><span className="font-semibold text-gray-700">Execution ID:</span> {submitted.execution_id}</p>
-          <p><span className="font-semibold text-gray-700">Status:</span>
-            <span className={`ml-2 px-3 py-1 rounded-full text-xs font-bold ${isCompleted ? "bg-green-100 text-green-700" : isFailed ? "bg-red-100 text-red-700" : "bg-blue-100 text-blue-700"}`}>
+
+        <div className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-4 text-left space-y-2 mb-6 text-sm">
+          <p><span className="font-semibold text-gray-700 dark:text-gray-200">Order ID:</span> <span className="text-gray-600 dark:text-gray-300">{submitted.order_id}</span></p>
+          <p><span className="font-semibold text-gray-700 dark:text-gray-200">Execution ID:</span> <span className="text-gray-600 dark:text-gray-300">{submitted.execution_id}</span></p>
+          <p>
+            <span className="font-semibold text-gray-700 dark:text-gray-200">Status:</span>
+            <span className={`ml-2 px-3 py-1 rounded-full text-xs font-bold ${
+              isCompleted ? "bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300" :
+              isFailed    ? "bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300" :
+                            "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"
+            }`}>
               {execStatus?.status || "RUNNING"}
             </span>
           </p>
           {execStatus?.task_states && (
-            <div className="mt-3 pt-3 border-t border-gray-200 space-y-1">
+            <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-600 space-y-1">
               {Object.entries(execStatus.task_states).map(([task, state]) => (
                 <div key={task} className="flex justify-between text-xs">
-                  <span className="text-gray-600 capitalize">{task}</span>
-                  <span className={`font-semibold ${state==="COMPLETED"?"text-green-600":state==="FAILED"?"text-red-600":state==="RUNNING"?"text-blue-600":"text-gray-400"}`}>{state}</span>
+                  <span className="text-gray-600 dark:text-gray-300 capitalize">{task}</span>
+                  <span className={`font-semibold ${
+                    state === "COMPLETED" ? "text-green-600 dark:text-green-400" :
+                    state === "FAILED"    ? "text-red-600 dark:text-red-400"     :
+                    state === "RUNNING"   ? "text-blue-600 dark:text-blue-400"   : "text-gray-400"
+                  }`}>{state}</span>
                 </div>
               ))}
             </div>
           )}
         </div>
+
         <div className="flex gap-3 justify-center">
-          {isCompleted && <button onClick={() => navigate("/track")} className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all">Track Order</button>}
-          <button onClick={() => { setSubmitted(null); setExecStatus(null); setCart([]); setStep(1); }} className="bg-gray-100 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all">
+          {isCompleted && (
+            <button onClick={() => navigate("/track")}
+              className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all">
+              Track Order
+            </button>
+          )}
+          <button onClick={() => { setSubmitted(null); setExecStatus(null); setCart([]); setStep(1); }}
+            className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-all">
             {isFailed ? "Try Again" : "New Order"}
           </button>
         </div>
@@ -195,72 +219,78 @@ const PlaceOrder = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Order summary */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-gray-800">Order Summary</h2>
-            <div className="bg-white rounded-3xl shadow-lg p-6 space-y-3">
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white">Order Summary</h2>
+            <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-6 space-y-3">
               {cart.map(item => {
                 const prod = PRODUCTS.find(p => p.id === item.product_id);
                 return (
                   <div key={item.product_id} className="flex items-center gap-4">
                     <img src={prod?.image} alt={prod?.name} className="w-14 h-14 rounded-xl object-cover" />
                     <div className="flex-1">
-                      <p className="font-semibold text-gray-800 text-sm">{prod?.name}</p>
-                      <p className="text-gray-500 text-xs">Qty: {item.quantity}</p>
+                      <p className="font-semibold text-gray-800 dark:text-white text-sm">{prod?.name}</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs">Qty: {item.quantity}</p>
                     </div>
                     <p className="font-bold text-blue-600">₹{((prod?.price||0)*item.quantity).toLocaleString()}</p>
                   </div>
                 );
               })}
-              <div className="border-t pt-3 flex justify-between font-bold text-gray-800">
+              <div className="border-t dark:border-gray-700 pt-3 flex justify-between font-bold text-gray-800 dark:text-white">
                 <span>Total</span>
                 <span className="text-blue-600 text-lg">₹{total.toLocaleString()}</span>
               </div>
             </div>
-            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
-              <p className="text-amber-700 font-semibold text-sm mb-3">Demo Flags</p>
-              <label className="flex items-center gap-2 text-sm text-gray-700 mb-2 cursor-pointer">
+            <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded-2xl p-4">
+              <p className="text-amber-700 dark:text-amber-300 font-semibold text-sm mb-3">Demo Flags</p>
+              <label className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 mb-2 cursor-pointer">
                 <input type="checkbox" name="simulate_payment_failure" checked={form.simulate_payment_failure} onChange={handleChange} className="w-4 h-4" />
                 Force Payment Failure
               </label>
-              <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+              <label className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300 cursor-pointer">
                 <input type="checkbox" name="simulate_out_of_stock" checked={form.simulate_out_of_stock} onChange={handleChange} className="w-4 h-4" />
                 Simulate Out of Stock
               </label>
             </div>
           </div>
           {/* Customer form */}
-          <div className="bg-white rounded-3xl shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Delivery Details</h2>
+          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-6">
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Delivery Details</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-gray-600 mb-1">Full Name *</label>
+                <label className="block text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">Full Name *</label>
                 <div className="relative"><FaUser className="absolute left-3 top-3.5 text-gray-400" />
-                  <input name="customer_name" value={form.customer_name} onChange={handleChange} placeholder="John Doe" className="w-full pl-9 pr-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
+                  <input name="customer_name" value={form.customer_name} onChange={handleChange} placeholder="John Doe"
+                    className="w-full pl-9 pr-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-600 mb-1">Email *</label>
+                <label className="block text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">Email *</label>
                 <div className="relative"><FaEnvelope className="absolute left-3 top-3.5 text-gray-400" />
-                  <input name="customer_email" value={form.customer_email} onChange={handleChange} type="email" placeholder="john@example.com" className="w-full pl-9 pr-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
+                  <input name="customer_email" value={form.customer_email} onChange={handleChange} type="email" placeholder="john@example.com"
+                    className="w-full pl-9 pr-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-600 mb-1">Address *</label>
+                <label className="block text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">Address *</label>
                 <div className="relative"><FaMapMarkerAlt className="absolute left-3 top-3.5 text-gray-400" />
-                  <input name="address" value={form.address} onChange={handleChange} placeholder="123 Main Street" className="w-full pl-9 pr-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
+                  <input name="address" value={form.address} onChange={handleChange} placeholder="123 Main Street"
+                    className="w-full pl-9 pr-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-600 mb-1">City *</label>
-                  <input name="city" value={form.city} onChange={handleChange} placeholder="Mumbai" className="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
+                  <label className="block text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">City *</label>
+                  <input name="city" value={form.city} onChange={handleChange} placeholder="Mumbai"
+                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-600 mb-1">Pincode *</label>
-                  <input name="pincode" value={form.pincode} onChange={handleChange} placeholder="400001" maxLength={6} className="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
+                  <label className="block text-sm font-semibold text-gray-600 dark:text-gray-300 mb-1">Pincode *</label>
+                  <input name="pincode" value={form.pincode} onChange={handleChange} placeholder="400001" maxLength={6}
+                    className="w-full px-4 py-3 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-xl outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all" />
                 </div>
               </div>
-              {error && <div className="flex items-center gap-2 bg-red-50 border border-red-200 text-red-600 rounded-xl px-4 py-3 text-sm"><FaExclamationCircle /> {error}</div>}
-              <button type="submit" disabled={loading} className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all disabled:opacity-60 shadow-lg shadow-blue-200 mt-2">
+              {error && <div className="flex items-center gap-2 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-300 rounded-xl px-4 py-3 text-sm"><FaExclamationCircle /> {error}</div>}
+              <button type="submit" disabled={loading}
+                className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all disabled:opacity-60 shadow-lg shadow-blue-200 mt-2">
                 {loading ? "Placing Order…" : `Place Order — ₹${total.toLocaleString()}`}
               </button>
             </form>
@@ -291,7 +321,11 @@ const PlaceOrder = () => {
       <div className="flex gap-2 mb-8 flex-wrap">
         {CATEGORIES.map(cat => (
           <button key={cat} onClick={() => setActiveCategory(cat)}
-            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${activeCategory === cat ? "bg-blue-600 text-white shadow-md shadow-blue-200" : "bg-white text-gray-600 border border-gray-200 hover:border-blue-300 hover:text-blue-600"}`}>
+            className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
+              activeCategory === cat
+                ? "bg-blue-600 text-white shadow-md shadow-blue-200"
+                : "bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:border-blue-300 hover:text-blue-600"
+            }`}>
             {cat}
           </button>
         ))}
@@ -302,9 +336,10 @@ const PlaceOrder = () => {
         {filteredProducts.map(product => {
           const inCart = cart.find(i => i.product_id === product.id);
           return (
-            <div key={product.id} className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+            <div key={product.id} className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative">
-                <img src={product.image} alt={product.name} className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300" onError={e => { e.target.src = `https://picsum.photos/seed/${product.id}/300/300`; }} />
+                <img src={product.image} alt={product.name} className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={e => { e.target.src = `https://picsum.photos/seed/${product.id}/300/300`; }} />
                 {product.badge && (
                   <span className={`absolute top-2 left-2 ${BADGE_COLORS[product.badge] || "bg-gray-500"} text-white text-xs font-bold px-2 py-1 rounded-lg`}>
                     {product.badge}
@@ -313,21 +348,22 @@ const PlaceOrder = () => {
               </div>
               <div className="p-4">
                 <p className="text-xs text-blue-500 font-semibold mb-1 flex items-center gap-1"><FaTag size={10} /> {product.category}</p>
-                <h3 className="font-bold text-gray-800 text-sm mb-1 leading-tight">{product.name}</h3>
+                <h3 className="font-bold text-gray-800 dark:text-white text-sm mb-1 leading-tight">{product.name}</h3>
                 <div className="flex items-center gap-1 mb-2">
                   <StarRating rating={product.rating} />
                   <span className="text-xs text-gray-400">({product.reviews})</span>
                 </div>
                 <p className="text-blue-600 font-bold text-lg mb-3">₹{product.price.toLocaleString()}</p>
                 {!inCart ? (
-                  <button onClick={() => updateCart(product, 1)} className="w-full bg-blue-600 text-white py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-all flex items-center justify-center gap-2">
+                  <button onClick={() => updateCart(product, 1)}
+                    className="w-full bg-blue-600 text-white py-2 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-all flex items-center justify-center gap-2">
                     <FaPlus size={10} /> Add to Cart
                   </button>
                 ) : (
-                  <div className="flex items-center justify-between bg-blue-50 rounded-xl px-3 py-1.5">
-                    <button onClick={() => updateCart(product, -1)} className="text-blue-600 hover:text-blue-800 p-1"><FaMinus size={10} /></button>
-                    <span className="font-bold text-blue-700 text-sm">{inCart.quantity}</span>
-                    <button onClick={() => updateCart(product, 1)} className="text-blue-600 hover:text-blue-800 p-1"><FaPlus size={10} /></button>
+                  <div className="flex items-center justify-between bg-blue-50 dark:bg-blue-900 rounded-xl px-3 py-1.5">
+                    <button onClick={() => updateCart(product, -1)} className="text-blue-600 dark:text-blue-300 hover:text-blue-800 p-1"><FaMinus size={10} /></button>
+                    <span className="font-bold text-blue-700 dark:text-blue-200 text-sm">{inCart.quantity}</span>
+                    <button onClick={() => updateCart(product, 1)} className="text-blue-600 dark:text-blue-300 hover:text-blue-800 p-1"><FaPlus size={10} /></button>
                   </div>
                 )}
               </div>

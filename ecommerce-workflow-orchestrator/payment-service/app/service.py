@@ -2,18 +2,17 @@ import uuid
 import random
 from .models import PaymentRequest, PaymentResponse
 
-# Failure scenarios used for random simulation
 FAILURE_SCENARIOS = [
-    ("Card declined — insufficient funds",       "declined"),
-    ("Card declined — suspected fraud",          "declined"),
-    ("Payment gateway timeout",                  "error"),
-    ("Invalid card number",                      "declined"),
-    ("Transaction limit exceeded",               "declined"),
+    ("Card declined — insufficient funds",  "declined"),
+    ("Card declined — suspected fraud",     "declined"),
+    ("Payment gateway timeout",             "error"),
+    ("Invalid card number",                 "declined"),
+    ("Transaction limit exceeded",          "declined"),
 ]
 
 def process_payment(req: PaymentRequest) -> PaymentResponse:
 
-    # Explicit simulate_failure flag (from manual trigger or test)
+    # Only fail when the checkbox is ticked in the User Portal
     if req.simulate_failure:
         message, status = random.choice(FAILURE_SCENARIOS)
         return PaymentResponse(
@@ -24,7 +23,7 @@ def process_payment(req: PaymentRequest) -> PaymentResponse:
             status=status
         )
 
-    # Simulate high-value order check
+    # High-value order check (> ₹10,000)
     if req.amount > 10000:
         return PaymentResponse(
             success=False,
@@ -34,18 +33,7 @@ def process_payment(req: PaymentRequest) -> PaymentResponse:
             status="pending_approval"
         )
 
-    # Random 40% failure rate to simulate real-world payment failures
-    if random.random() < 0.40:
-        message, status = random.choice(FAILURE_SCENARIOS)
-        return PaymentResponse(
-            success=False,
-            order_id=req.order_id,
-            transaction_id=None,
-            message=f"[Auto-simulated] {message}",
-            status=status
-        )
-
-    # Normal success
+    # Always succeed for normal orders
     txn_id = "TXN-" + str(uuid.uuid4())[:8].upper()
     return PaymentResponse(
         success=True,
@@ -53,4 +41,4 @@ def process_payment(req: PaymentRequest) -> PaymentResponse:
         transaction_id=txn_id,
         message=f"Payment of {req.currency} {req.amount} charged successfully",
         status="charged"
-    ) 
+    )

@@ -6,6 +6,12 @@ import os
 import requests
 
 
+class _BusinessFailure(Exception):
+    """Raised when a service returns success=False (e.g. card declined).
+    This is NOT retried — it's a definitive business-level failure."""
+    pass
+
+
 # Service URL map — populated from environment variables set in docker-compose
 SERVICE_URLS = {
     "payment-service":      os.getenv("PAYMENT_SERVICE_URL",      "http://localhost:8001/process"),
@@ -56,10 +62,11 @@ class TaskExecutor:
             result = resp.json()
             print(f"[Executor] {task_id} → {result}")
 
-            # If the service returned success=False, treat it as a task failure
+            # If the service returned success=False, it's a business failure
+            # (e.g. card declined) — do NOT retry, raise immediately
             if isinstance(result, dict) and result.get("success") is False:
                 reason = result.get("message", "Service returned failure")
-                raise RuntimeError(f"{task_id} failed: {reason}")
+                raise _BusinessFailure(f"{task_id} failed: {reason}")
 
             # Trigger n8n webhook after notification step
             if task_id == "notification":
@@ -67,6 +74,8 @@ class TaskExecutor:
 
             return result
 
+        except _BusinessFailure:
+            raise   # propagate without retry
         except requests.exceptions.RequestException as exc:
             raise RuntimeError(f"HTTP call to {url} failed: {exc}") from exc
 

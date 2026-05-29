@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  FaHome, FaProjectDiagram, FaTasks,
-  FaFileAlt, FaBell, FaCog, FaListAlt,
-} from "react-icons/fa";
+import { FaHome, FaProjectDiagram, FaTasks, FaFileAlt, FaBell, FaCog, FaListAlt } from "react-icons/fa";
 import API from "../services/api";
 
 const NAV = [
@@ -23,10 +20,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetch = () => {
       API.get("/workflows/alerts?limit=100")
-        .then((r) => {
-          const unresolved = (r.data.alerts || []).filter((a) => !a.resolved).length;
-          setAlertCount(unresolved);
-        })
+        .then(r => setAlertCount((r.data.alerts || []).filter(a => !a.resolved).length))
         .catch(() => {});
     };
     fetch();
@@ -35,7 +29,7 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="w-56 min-h-screen bg-blue-700 text-white p-6 flex flex-col">
+    <div className="w-56 min-h-screen bg-blue-700 dark:bg-gray-900 text-white p-6 flex flex-col transition-colors duration-300 border-r border-blue-800 dark:border-gray-800">
       <h1 className="text-2xl font-bold mb-10 tracking-tight">Orchestrator</h1>
 
       <ul className="space-y-2 text-base flex-1">
@@ -43,14 +37,12 @@ const Sidebar = () => {
           const active = location.pathname === to;
           return (
             <li key={to}>
-              <Link
-                to={to}
+              <Link to={to}
                 className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-all font-medium ${
                   active
-                    ? "bg-white text-blue-700 shadow-md"
-                    : "hover:bg-blue-600 text-white"
-                }`}
-              >
+                    ? "bg-white dark:bg-blue-600 text-blue-700 dark:text-white shadow-md"
+                    : "hover:bg-blue-600 dark:hover:bg-gray-800 text-white"
+                }`}>
                 <Icon className="text-lg shrink-0" />
                 <span className="flex-1">{label}</span>
                 {label === "Alerts" && alertCount > 0 && (
@@ -64,7 +56,7 @@ const Sidebar = () => {
         })}
       </ul>
 
-      <div className="mt-6 pt-4 border-t border-blue-600 text-xs text-blue-300 text-center">
+      <div className="mt-6 pt-4 border-t border-blue-600 dark:border-gray-700 text-xs text-blue-300 dark:text-gray-500 text-center">
         v1.0.0 · NT Orchestrator
       </div>
     </div>

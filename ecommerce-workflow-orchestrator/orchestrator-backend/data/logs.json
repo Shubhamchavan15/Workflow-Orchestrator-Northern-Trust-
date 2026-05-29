@@ -478,5 +478,415 @@
     "execution_id": "EX-5DB89C9E",
     "timestamp": "2026-05-28T22:46:51.855767",
     "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:25:59.354311",
+    "message": "Workflow execution started. execution_id=EX-7688BB21"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:25:59.390660",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:25:59.449253",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:25:59.530396",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:01.676387",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:01.749379",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:07.966407",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:08.017251",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:08.070005",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:10.141839",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:10.244373",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:10.292585",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:19.076880",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-7688BB21",
+    "timestamp": "2026-05-29T04:26:19.134697",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-D8B8C84C",
+    "timestamp": "2026-05-29T04:29:02.058863",
+    "message": "Workflow execution started. execution_id=EX-D8B8C84C"
+  },
+  {
+    "execution_id": "EX-D8B8C84C",
+    "timestamp": "2026-05-29T04:29:02.108704",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-D8B8C84C",
+    "timestamp": "2026-05-29T04:29:02.163252",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-D8B8C84C",
+    "timestamp": "2026-05-29T04:29:02.224014",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-D8B8C84C",
+    "timestamp": "2026-05-29T04:29:14.468902",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: PROD-003 has only 0 units"
+  },
+  {
+    "execution_id": "EX-D8B8C84C",
+    "timestamp": "2026-05-29T04:29:14.522006",
+    "message": "Workflow FAILED: inventory failed: PROD-003 has only 0 units"
+  },
+  {
+    "execution_id": "EX-D8B8C84C",
+    "timestamp": "2026-05-29T04:29:21.213651",
+    "message": "Failure notification sent to customer: abc@gmail.com"
+  },
+  {
+    "execution_id": "EX-D8B8C84C",
+    "timestamp": "2026-05-29T04:29:27.902719",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-D8B8C84C",
+    "timestamp": "2026-05-29T04:29:27.932641",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-EB347052",
+    "timestamp": "2026-05-29T17:52:49.474172",
+    "message": "Workflow execution started. execution_id=EX-EB347052"
+  },
+  {
+    "execution_id": "EX-EB347052",
+    "timestamp": "2026-05-29T17:52:49.503001",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-EB347052",
+    "timestamp": "2026-05-29T17:52:49.546885",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-EB347052",
+    "timestamp": "2026-05-29T17:52:49.594237",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-EB347052",
+    "timestamp": "2026-05-29T17:53:01.811062",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: PROD-005 has only 0 units"
+  },
+  {
+    "execution_id": "EX-EB347052",
+    "timestamp": "2026-05-29T17:53:01.846733",
+    "message": "Workflow FAILED: inventory failed: PROD-005 has only 0 units"
+  },
+  {
+    "execution_id": "EX-EB347052",
+    "timestamp": "2026-05-29T17:53:09.818890",
+    "message": "Failure notification sent to customer: shubhofficial1507@gmail.com"
+  },
+  {
+    "execution_id": "EX-EB347052",
+    "timestamp": "2026-05-29T17:53:17.867516",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-EB347052",
+    "timestamp": "2026-05-29T17:53:17.898914",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-537EA73F",
+    "timestamp": "2026-05-29T17:53:48.823789",
+    "message": "Workflow execution started. execution_id=EX-537EA73F"
+  },
+  {
+    "execution_id": "EX-537EA73F",
+    "timestamp": "2026-05-29T17:53:48.853922",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-537EA73F",
+    "timestamp": "2026-05-29T17:53:48.903380",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-537EA73F",
+    "timestamp": "2026-05-29T17:53:48.953547",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-537EA73F",
+    "timestamp": "2026-05-29T17:54:01.109158",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: PROD-010 has only 0 units"
+  },
+  {
+    "execution_id": "EX-537EA73F",
+    "timestamp": "2026-05-29T17:54:01.143740",
+    "message": "Workflow FAILED: inventory failed: PROD-010 has only 0 units"
+  },
+  {
+    "execution_id": "EX-537EA73F",
+    "timestamp": "2026-05-29T17:54:15.324008",
+    "message": "Failure notification sent to customer: shubhofficial1507@gmail.com"
+  },
+  {
+    "execution_id": "EX-537EA73F",
+    "timestamp": "2026-05-29T17:54:22.715727",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-537EA73F",
+    "timestamp": "2026-05-29T17:54:22.747848",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-3D588F67",
+    "timestamp": "2026-05-29T17:59:37.963918",
+    "message": "Workflow execution started. execution_id=EX-3D588F67"
+  },
+  {
+    "execution_id": "EX-3D588F67",
+    "timestamp": "2026-05-29T17:59:37.991808",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-3D588F67",
+    "timestamp": "2026-05-29T17:59:38.045539",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-3D588F67",
+    "timestamp": "2026-05-29T17:59:38.091125",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-3D588F67",
+    "timestamp": "2026-05-29T17:59:40.240775",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: PROD-008 has only 0 units"
+  },
+  {
+    "execution_id": "EX-3D588F67",
+    "timestamp": "2026-05-29T17:59:40.273706",
+    "message": "Workflow FAILED: inventory failed: PROD-008 has only 0 units"
+  },
+  {
+    "execution_id": "EX-3D588F67",
+    "timestamp": "2026-05-29T17:59:47.639105",
+    "message": "Failure notification sent to customer: shubhofficial1507@gmail.com"
+  },
+  {
+    "execution_id": "EX-3D588F67",
+    "timestamp": "2026-05-29T17:59:55.191565",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-3D588F67",
+    "timestamp": "2026-05-29T17:59:55.224903",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-0EB23DA3",
+    "timestamp": "2026-05-29T18:08:46.857853",
+    "message": "Workflow execution started. execution_id=EX-0EB23DA3"
+  },
+  {
+    "execution_id": "EX-0EB23DA3",
+    "timestamp": "2026-05-29T18:08:46.954445",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-0EB23DA3",
+    "timestamp": "2026-05-29T18:08:47.022967",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-0EB23DA3",
+    "timestamp": "2026-05-29T18:08:47.087872",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-0EB23DA3",
+    "timestamp": "2026-05-29T18:08:49.283490",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: PROD-006 has only 0 units"
+  },
+  {
+    "execution_id": "EX-0EB23DA3",
+    "timestamp": "2026-05-29T18:08:49.334184",
+    "message": "Workflow FAILED: inventory failed: PROD-006 has only 0 units"
+  },
+  {
+    "execution_id": "EX-0EB23DA3",
+    "timestamp": "2026-05-29T18:08:57.831540",
+    "message": "Failure notification sent to customer: shubhofficial1507@gmail.com"
+  },
+  {
+    "execution_id": "EX-0EB23DA3",
+    "timestamp": "2026-05-29T18:09:05.096043",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-0EB23DA3",
+    "timestamp": "2026-05-29T18:09:05.129946",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:42.547840",
+    "message": "Workflow execution started. execution_id=EX-67181315"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:42.579525",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:42.634289",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:42.682145",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:44.803967",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:44.845445",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:46.933913",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:46.994880",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:47.017264",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:49.129714",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:49.185831",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:49.236075",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:58.808686",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-67181315",
+    "timestamp": "2026-05-29T18:19:58.859192",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-BFC9CC0D",
+    "timestamp": "2026-05-29T18:22:11.966645",
+    "message": "Workflow execution started. execution_id=EX-BFC9CC0D"
+  },
+  {
+    "execution_id": "EX-BFC9CC0D",
+    "timestamp": "2026-05-29T18:22:11.998336",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-BFC9CC0D",
+    "timestamp": "2026-05-29T18:22:12.050316",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-BFC9CC0D",
+    "timestamp": "2026-05-29T18:22:12.122236",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-BFC9CC0D",
+    "timestamp": "2026-05-29T18:22:14.238680",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: PROD-008 has only 0 units"
+  },
+  {
+    "execution_id": "EX-BFC9CC0D",
+    "timestamp": "2026-05-29T18:22:14.272067",
+    "message": "Workflow FAILED: inventory failed: PROD-008 has only 0 units"
+  },
+  {
+    "execution_id": "EX-BFC9CC0D",
+    "timestamp": "2026-05-29T18:22:22.556804",
+    "message": "Failure notification sent to customer: shubhofficial1507@gmail.com"
+  },
+  {
+    "execution_id": "EX-BFC9CC0D",
+    "timestamp": "2026-05-29T18:22:29.825198",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-BFC9CC0D",
+    "timestamp": "2026-05-29T18:22:29.854219",
+    "message": "Workflow execution finished with status: FAILED"
   }
 ]
