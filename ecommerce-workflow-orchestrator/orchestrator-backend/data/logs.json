@@ -888,5 +888,740 @@
     "execution_id": "EX-BFC9CC0D",
     "timestamp": "2026-05-29T18:22:29.854219",
     "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "timestamp": "2026-05-30T04:54:16.612225",
+    "message": "Workflow execution started. execution_id=EX-019D966E"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "timestamp": "2026-05-30T04:54:16.662532",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "timestamp": "2026-05-30T04:54:16.715004",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "timestamp": "2026-05-30T04:54:16.763417",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "timestamp": "2026-05-30T04:54:18.893721",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: PROD-010 has only 0 units"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "timestamp": "2026-05-30T04:54:18.932780",
+    "message": "Workflow FAILED: inventory failed: PROD-010 has only 0 units"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "timestamp": "2026-05-30T04:54:21.039943",
+    "message": "Failure notification sent to customer: shubhofficial1507@gmail.com"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "timestamp": "2026-05-30T04:54:23.093964",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "timestamp": "2026-05-30T04:54:23.123592",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:46.320091",
+    "message": "Workflow execution started. execution_id=EX-0639D20D"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:46.351669",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:46.403500",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:46.453877",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:48.581107",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:48.629645",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:50.712408",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:50.780557",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:50.819200",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:52.885666",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:52.945052",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:52.995532",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:57.006965",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "timestamp": "2026-05-30T04:56:57.068869",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "timestamp": "2026-05-30T04:57:22.281952",
+    "message": "Workflow execution started. execution_id=EX-8CCEBCED"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "timestamp": "2026-05-30T04:57:22.316457",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "timestamp": "2026-05-30T04:57:22.362236",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "timestamp": "2026-05-30T04:57:22.414735",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "timestamp": "2026-05-30T04:57:24.505342",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: PROD-011 has only 0 units"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "timestamp": "2026-05-30T04:57:24.537509",
+    "message": "Workflow FAILED: inventory failed: PROD-011 has only 0 units"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "timestamp": "2026-05-30T04:57:26.598937",
+    "message": "Failure notification sent to customer: shubhofficial1507@gmail.com"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "timestamp": "2026-05-30T04:57:28.695976",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "timestamp": "2026-05-30T04:57:28.734013",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:08.379315",
+    "message": "Workflow execution started. execution_id=EX-332AE143"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:08.406273",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:08.446137",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:08.496506",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:10.637380",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:10.687101",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:12.769015",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:12.820496",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:12.871514",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:14.895124",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:14.952621",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:15.003180",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:24.835216",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "timestamp": "2026-05-30T05:03:24.884739",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:28.762162",
+    "message": "Workflow execution started. execution_id=EX-58E5BE55"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:28.805699",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:28.863932",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:28.911759",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:31.066478",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:31.114203",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:33.236006",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:33.301816",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:33.344472",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:35.411816",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:35.477600",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:35.535705",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:39.529305",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "timestamp": "2026-05-30T14:35:39.579396",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:01.094140",
+    "message": "Workflow execution started. execution_id=EX-17EFCB49"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:01.127016",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:01.188924",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:01.242251",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:03.371851",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:03.433586",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:05.551723",
+    "message": "Task 'payment' FAILED after retries: payment failed: Payment gateway timeout"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:05.586941",
+    "message": "Workflow FAILED: payment failed: Payment gateway timeout"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:07.700033",
+    "message": "Failure notification sent to customer: shardulkaranjkar94@gmail.com"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:09.802064",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "timestamp": "2026-05-30T14:41:09.839936",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:40.189831",
+    "message": "Workflow execution started. execution_id=EX-769D3558"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:40.218006",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:40.266600",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:40.325045",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:42.431017",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:42.497296",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:44.588655",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:44.660050",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:44.681302",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:46.786047",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:46.855618",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:46.915320",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:55.333446",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "timestamp": "2026-05-30T14:43:55.400379",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:49.356246",
+    "message": "Workflow execution started. execution_id=EX-A2F943E2"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:49.398080",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:49.451922",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:49.498329",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:51.624584",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:51.676741",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:53.748924",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:53.813508",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:53.835714",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:55.940234",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:56.033380",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:45:56.113643",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:46:05.232299",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "timestamp": "2026-05-30T14:46:05.299195",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:11.161415",
+    "message": "Workflow execution started. execution_id=EX-2D6020B1"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:11.207742",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:11.299840",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:11.373114",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:13.532802",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:13.605378",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:15.704390",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:15.789765",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:15.832211",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:17.939345",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:18.038094",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:18.115803",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:25.920265",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "timestamp": "2026-05-30T14:51:26.004069",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "timestamp": "2026-05-30T14:55:57.953480",
+    "message": "Workflow execution started. execution_id=EX-7FD5D694"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "timestamp": "2026-05-30T14:55:57.993000",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "timestamp": "2026-05-30T14:55:58.053304",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "timestamp": "2026-05-30T14:55:58.104742",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "timestamp": "2026-05-30T14:56:00.220456",
+    "message": "Task 'inventory' FAILED after retries: inventory failed: Item out of stock \u2014 back-order triggered"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "timestamp": "2026-05-30T14:56:00.251209",
+    "message": "Workflow FAILED: inventory failed: Item out of stock \u2014 back-order triggered"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "timestamp": "2026-05-30T14:56:02.339124",
+    "message": "Failure notification sent to customer: shardulkaranjkar94@gmail.com"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "timestamp": "2026-05-30T14:56:04.417814",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "timestamp": "2026-05-30T14:56:04.450034",
+    "message": "Workflow execution finished with status: FAILED"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:42.029867",
+    "message": "Workflow execution started. execution_id=EX-70813201"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:42.063255",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:42.119314",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:42.175942",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:44.307251",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:44.378538",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:46.491907",
+    "message": "Task 'payment' completed successfully"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:46.559686",
+    "message": "Task 'shipping' started"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:46.575388",
+    "message": "Task 'notification' started"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:48.691690",
+    "message": "Task 'shipping' completed successfully"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:48.752538",
+    "message": "Task 'completed' started"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:48.810703",
+    "message": "Task 'completed' completed successfully"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:52.800167",
+    "message": "Task 'notification' completed successfully"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "timestamp": "2026-05-31T11:22:52.857705",
+    "message": "Workflow execution finished with status: COMPLETED"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:34.059989",
+    "message": "Workflow execution started. execution_id=EX-1245C57E"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:34.107478",
+    "message": "Task 'order_received' started"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:34.171494",
+    "message": "Task 'order_received' completed successfully"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:34.241263",
+    "message": "Task 'inventory' started"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:36.368337",
+    "message": "Task 'inventory' completed successfully"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:36.422988",
+    "message": "Task 'payment' started"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:38.540588",
+    "message": "Task 'payment' FAILED after retries: payment failed: Transaction limit exceeded"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:38.580253",
+    "message": "Workflow FAILED: payment failed: Transaction limit exceeded"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:40.684208",
+    "message": "Failure notification sent to customer: shubhofficial1507@gmail.com"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:42.800542",
+    "message": "Alert notification sent to admin: classic270823@gmail.com"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "timestamp": "2026-05-31T11:23:42.839409",
+    "message": "Workflow execution finished with status: FAILED"
   }
 ]

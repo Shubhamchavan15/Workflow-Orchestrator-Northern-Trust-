@@ -57,7 +57,9 @@ class TaskExecutor:
         payload = self._build_payload(task_id, order_data or {})
 
         try:
-            resp = requests.post(url, json=payload, timeout=10)
+            # Notification service needs more time due to SMTP
+            timeout = 60 if task_id == "notification" else 10
+            resp = requests.post(url, json=payload, timeout=timeout)
             resp.raise_for_status()
             result = resp.json()
             print(f"[Executor] {task_id} → {result}")

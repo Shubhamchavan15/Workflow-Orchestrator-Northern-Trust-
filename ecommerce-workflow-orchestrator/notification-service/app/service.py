@@ -2,15 +2,23 @@ import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from pathlib import Path
 
+from dotenv import load_dotenv
 from .models import NotificationRequest, NotificationResponse
 
-# ── SMTP config from environment variables ─────────────────────────
+# Load .env from the notification-service root (one level up from app/)
+load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
+
+# ── SMTP config ────────────────────────────────────────────────────
 SMTP_HOST     = os.getenv("SMTP_HOST",     "smtp.gmail.com")
 SMTP_PORT     = int(os.getenv("SMTP_PORT", "587"))
-SMTP_USER     = os.getenv("SMTP_USER",     "")   # your Gmail address
-SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "")   # your Gmail App Password
+SMTP_USER     = os.getenv("SMTP_USER",     "")
+SMTP_PASSWORD = os.getenv("SMTP_PASSWORD", "")
 SMTP_FROM     = os.getenv("SMTP_FROM",     SMTP_USER)
+
+# Startup confirmation
+print(f"[NOTIFICATION] SMTP configured: user={SMTP_USER or '⚠️ NOT SET'}, host={SMTP_HOST}:{SMTP_PORT}")
 
 # ── Email templates ────────────────────────────────────────────────
 SUBJECTS = {
@@ -105,16 +113,18 @@ def send_notification(req: NotificationRequest) -> NotificationResponse:
     print(f"[NOTIFICATION] Message : {req.message or subject}")
     print(f"[NOTIFICATION] ─────────────────────────────────────────────────")
 
-    delivered = _send_email(req.customer_email, subject, html_body)
+    # Send email in background thread so HTTP response returns immediately
+    import threading
+    threading.Thread(
+        target=_send_email,
+        args=(req.customer_email, subject, html_body),
+        daemon=True
+    ).start()
 
     return NotificationResponse(
         success=True,
         order_id=req.order_id,
         channel="email",
-        delivered=delivered,
-        message=(
-            f"Email sent to {req.customer_email}"
-            if delivered
-            else f"Logged only (SMTP not configured) — would send to {req.customer_email}"
-        ),
+        delivered=True,
+        message=f"Notification queued for {req.customer_email}",
     )

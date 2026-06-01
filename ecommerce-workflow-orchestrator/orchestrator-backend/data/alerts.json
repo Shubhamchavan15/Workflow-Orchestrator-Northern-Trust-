@@ -130,5 +130,65 @@
     "message": "inventory failed: PROD-008 has only 0 units",
     "created_at": "2026-05-29T18:22:14.288453",
     "resolved": true
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "order_id": "ORD-96736",
+    "customer_name": "Shubham Chavan",
+    "amount": 599.0,
+    "currency": "INR",
+    "severity": "Warning",
+    "title": "Inventory Issue \u2014 Order ORD-96736",
+    "message": "inventory failed: PROD-010 has only 0 units",
+    "created_at": "2026-05-30T04:54:18.956756",
+    "resolved": true
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "order_id": "ORD-55269",
+    "customer_name": "Sam",
+    "amount": 5999.0,
+    "currency": "INR",
+    "severity": "Warning",
+    "title": "Inventory Issue \u2014 Order ORD-55269",
+    "message": "inventory failed: PROD-011 has only 0 units",
+    "created_at": "2026-05-30T04:57:24.565830",
+    "resolved": true
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "order_id": "ORD-51952",
+    "customer_name": "Shardul ",
+    "amount": 1299.0,
+    "currency": "INR",
+    "severity": "Critical",
+    "title": "Payment Failed \u2014 Order ORD-51952",
+    "message": "payment failed: Payment gateway timeout",
+    "created_at": "2026-05-30T14:41:05.618016",
+    "resolved": true
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "order_id": "ORD-77548",
+    "customer_name": "Shardul ",
+    "amount": 3999.0,
+    "currency": "INR",
+    "severity": "Warning",
+    "title": "Inventory Issue \u2014 Order ORD-77548",
+    "message": "inventory failed: Item out of stock \u2014 back-order triggered",
+    "created_at": "2026-05-30T14:56:00.285558",
+    "resolved": true
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "order_id": "ORD-49624",
+    "customer_name": "Shubham Chavan",
+    "amount": 599.0,
+    "currency": "INR",
+    "severity": "Critical",
+    "title": "Payment Failed \u2014 Order ORD-49624",
+    "message": "payment failed: Transaction limit exceeded",
+    "created_at": "2026-05-31T11:23:38.615571",
+    "resolved": true
   }
 ]

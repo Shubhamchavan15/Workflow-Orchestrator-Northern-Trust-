@@ -278,5 +278,215 @@
     "created_at": "2026-05-29T18:22:11.962004",
     "updated_at": "2026-05-29T18:22:29.854219",
     "completed_at": "2026-05-29T18:22:29.854219"
+  },
+  {
+    "execution_id": "EX-019D966E",
+    "order_id": "ORD-96736",
+    "customer_name": "Shubham Chavan",
+    "customer_email": "shubhofficial1507@gmail.com",
+    "amount": 599.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "FAILED"
+    },
+    "created_at": "2026-05-30T04:54:16.612225",
+    "updated_at": "2026-05-30T04:54:23.111242",
+    "completed_at": "2026-05-30T04:54:23.111242"
+  },
+  {
+    "execution_id": "EX-0639D20D",
+    "order_id": "ORD-33601",
+    "customer_name": "Shubham Chavan",
+    "customer_email": "shubhofficial1507@gmail.com",
+    "amount": 2499.0,
+    "status": "COMPLETED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "COMPLETED",
+      "payment": "COMPLETED",
+      "shipping": "COMPLETED",
+      "notification": "COMPLETED",
+      "completed": "COMPLETED"
+    },
+    "created_at": "2026-05-30T04:56:46.309398",
+    "updated_at": "2026-05-30T04:56:57.046474",
+    "completed_at": "2026-05-30T04:56:57.046474"
+  },
+  {
+    "execution_id": "EX-8CCEBCED",
+    "order_id": "ORD-55269",
+    "customer_name": "Sam",
+    "customer_email": "shubhofficial1507@gmail.com",
+    "amount": 5999.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "FAILED"
+    },
+    "created_at": "2026-05-30T04:57:22.271777",
+    "updated_at": "2026-05-30T04:57:28.732452",
+    "completed_at": "2026-05-30T04:57:28.732452"
+  },
+  {
+    "execution_id": "EX-332AE143",
+    "order_id": "ORD-72936",
+    "customer_name": "Sam",
+    "customer_email": "shubhofficial1507@gmail.com",
+    "amount": 2499.0,
+    "status": "COMPLETED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "COMPLETED",
+      "payment": "COMPLETED",
+      "shipping": "COMPLETED",
+      "notification": "COMPLETED",
+      "completed": "COMPLETED"
+    },
+    "created_at": "2026-05-30T05:03:08.374908",
+    "updated_at": "2026-05-30T05:03:24.871275",
+    "completed_at": "2026-05-30T05:03:24.871275"
+  },
+  {
+    "execution_id": "EX-58E5BE55",
+    "order_id": "ORD-64334",
+    "customer_name": "Shardul ",
+    "customer_email": "shardulkaranjkar94@gmail.com",
+    "amount": 3798.0,
+    "status": "COMPLETED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "COMPLETED",
+      "payment": "COMPLETED",
+      "shipping": "COMPLETED",
+      "notification": "COMPLETED",
+      "completed": "COMPLETED"
+    },
+    "created_at": "2026-05-30T14:35:28.751202",
+    "updated_at": "2026-05-30T14:35:39.563327",
+    "completed_at": "2026-05-30T14:35:39.563327"
+  },
+  {
+    "execution_id": "EX-17EFCB49",
+    "order_id": "ORD-51952",
+    "customer_name": "Shardul ",
+    "customer_email": "shardulkaranjkar94@gmail.com",
+    "amount": 1299.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "COMPLETED",
+      "payment": "FAILED"
+    },
+    "created_at": "2026-05-30T14:41:01.080871",
+    "updated_at": "2026-05-30T14:41:09.839936",
+    "completed_at": "2026-05-30T14:41:09.839936"
+  },
+  {
+    "execution_id": "EX-769D3558",
+    "order_id": "ORD-29098",
+    "customer_name": "Shardul ",
+    "customer_email": "shardulkaranjkar94@gmail.com",
+    "amount": 3999.0,
+    "status": "COMPLETED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "COMPLETED",
+      "payment": "COMPLETED",
+      "shipping": "COMPLETED",
+      "notification": "COMPLETED",
+      "completed": "COMPLETED"
+    },
+    "created_at": "2026-05-30T14:43:40.182477",
+    "updated_at": "2026-05-30T14:43:55.364034",
+    "completed_at": "2026-05-30T14:43:55.364034"
+  },
+  {
+    "execution_id": "EX-A2F943E2",
+    "order_id": "ORD-48336",
+    "customer_name": "Shardul ",
+    "customer_email": "shardulkaranjkar94@gmail.com",
+    "amount": 3299.0,
+    "status": "COMPLETED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "COMPLETED",
+      "payment": "COMPLETED",
+      "shipping": "COMPLETED",
+      "notification": "COMPLETED",
+      "completed": "COMPLETED"
+    },
+    "created_at": "2026-05-30T14:45:49.352032",
+    "updated_at": "2026-05-30T14:46:05.272253",
+    "completed_at": "2026-05-30T14:46:05.272253"
+  },
+  {
+    "execution_id": "EX-2D6020B1",
+    "order_id": "ORD-20170",
+    "customer_name": "Shardul ",
+    "customer_email": "shardulkaranjkar94@gmail.com",
+    "amount": 1299.0,
+    "status": "COMPLETED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "COMPLETED",
+      "payment": "COMPLETED",
+      "shipping": "COMPLETED",
+      "notification": "COMPLETED",
+      "completed": "COMPLETED"
+    },
+    "created_at": "2026-05-30T14:51:11.151473",
+    "updated_at": "2026-05-30T14:51:25.973618",
+    "completed_at": "2026-05-30T14:51:25.973618"
+  },
+  {
+    "execution_id": "EX-7FD5D694",
+    "order_id": "ORD-77548",
+    "customer_name": "Shardul ",
+    "customer_email": "shardulkaranjkar94@gmail.com",
+    "amount": 3999.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "FAILED"
+    },
+    "created_at": "2026-05-30T14:55:57.944922",
+    "updated_at": "2026-05-30T14:56:04.450034",
+    "completed_at": "2026-05-30T14:56:04.450034"
+  },
+  {
+    "execution_id": "EX-70813201",
+    "order_id": "ORD-98464",
+    "customer_name": "Shubham Chavan",
+    "customer_email": "shubhofficial1507@gmail.com",
+    "amount": 4599.0,
+    "status": "COMPLETED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "COMPLETED",
+      "payment": "COMPLETED",
+      "shipping": "COMPLETED",
+      "notification": "COMPLETED",
+      "completed": "COMPLETED"
+    },
+    "created_at": "2026-05-31T11:22:42.019559",
+    "updated_at": "2026-05-31T11:22:52.845089",
+    "completed_at": "2026-05-31T11:22:52.845089"
+  },
+  {
+    "execution_id": "EX-1245C57E",
+    "order_id": "ORD-49624",
+    "customer_name": "Shubham Chavan",
+    "customer_email": "shubhofficial1507@gmail.com",
+    "amount": 599.0,
+    "status": "FAILED",
+    "task_states": {
+      "order_received": "COMPLETED",
+      "inventory": "COMPLETED",
+      "payment": "FAILED"
+    },
+    "created_at": "2026-05-31T11:23:34.054319",
+    "updated_at": "2026-05-31T11:23:42.833153",
+    "completed_at": "2026-05-31T11:23:42.833153"
   }
 ]
