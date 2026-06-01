@@ -8,3 +8,9 @@ venv/
 .vscode/
 
 .env
+
+# Runtime data — generated at runtime, not source code
+orchestrator-backend/data/alerts.json
+orchestrator-backend/data/executions.json
+orchestrator-backend/data/logs.json
+orchestrator-backend/data/settings.json

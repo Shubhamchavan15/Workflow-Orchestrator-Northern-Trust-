@@ -1,8 +1,0 @@
-[
-  {
-    "settings_key": "admin_settings",
-    "notification_email": "classic270823@gmail.com",
-    "max_retries": 3,
-    "slack_enabled": true
-  }
-]
